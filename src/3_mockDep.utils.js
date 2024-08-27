@@ -12,5 +12,5 @@ export async function validatePasswordApi(password) {
  * @param {Number} max
  */
 export function randomizer(min, max) {
-  return Math.round(Math.random() * (max - min));
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
