@@ -8,6 +8,7 @@ describe("Moving a Guard", () => {
 
     const shadowCallback = jest.fn(realFuntion);
     const result = guardMove(shadowCallback, "walk", 7);
+    expect(shadowCallback).toHaveBeenCalledWith("walk", 7);
     expect(shadowCallback).toHaveBeenCalledTimes(1);
     expect(result).toBe("walk");
   });
@@ -19,6 +20,7 @@ describe("Moving a Guard", () => {
 
     const shadowCallback = jest.fn(realFuntion);
     const result = guardMove(shadowCallback, "run", 7);
+    expect(shadowCallback).toHaveBeenCalledWith("run", 7);
     expect(shadowCallback).toHaveBeenCalledTimes(1);
     expect(result).toBe("run");
   });
@@ -31,5 +33,6 @@ describe("Moving a Guard", () => {
     const shadowCallback = jest.fn(realFuntion);
     const result = guardMove(shadowCallback, "Sloooowly go", 7);
     expect(result).toBe(null);
+    expect(shadowCallback).toHaveBeenCalledTimes(0);
   });
 });
