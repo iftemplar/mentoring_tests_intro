@@ -5,10 +5,12 @@
  * @param {*} extras
  */
 export const guardMove = (moveCallback, action, extras) => {
+  console.log(`Calling ${action}`);
+
   if (["walk", "run"].includes(action)) {
     return moveCallback(action, extras);
-  } else {
-    console.error(`Invalid ${action}...`);
-    return null;
   }
+
+  console.error(`Invalid ${action}...`);
+  return null;
 };
