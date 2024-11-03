@@ -4,13 +4,15 @@
  * @param {String} action
  * @param {*} extras
  */
-export const guardMove = (moveCallback, action, extras) => {
+const guardMove = (moveCallback, action, extras) => {
   console.log(`Calling ${action}`);
 
   if (["walk", "run"].includes(action)) {
     return moveCallback(action, extras);
   }
 
-  console.error(`Invalid ${action}...`);
+  console.error(`Invalid parameter ${action}...`);
   return null;
 };
+
+module.exports = guardMove;
